@@ -1,6 +1,20 @@
-/*
-  Iterative solution using Breadth First Search
-*/
+// Leetcode: https://leetcode.com/problems/invert-binary-tree/
+// Description: Invert a binary tree.
+
+// Example:
+// Input:
+//      4
+//    /   \
+//   2     7
+//  / \   / \
+// 1   3 6   9
+
+// Output:
+//      4
+//    /   \
+//   7     2
+//  / \   / \
+// 9   6 3   1
 
 function invertBinaryTreeIte(root) { // Iterative
 	const queue = [root];
@@ -14,14 +28,14 @@ function invertBinaryTreeIte(root) { // Iterative
 	return root;
 }
 
-function invertBinaryTreeRec(root) {
-  if (root === null) return; // Base case
+function invertBinaryTreeRec(root) { // Recursion
+  if (root === null) return null; // Base case
   swapLeftAndRight(root);
   invertBinaryTreeRec(root.left);
   invertBinaryTreeRec(root.right);
 }
 
-function swapLeftAndRight(tree) {
+function swapLeftAndRight(tree) { // Function to swap left and right nodes
 	const left = tree.left;
 	tree.left = tree.right;
 	tree.right = left;
