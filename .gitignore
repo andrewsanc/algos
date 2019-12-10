@@ -1,6 +1,5 @@
 node_modules
 package-lock.json
-/reverseString
 uniqueEmailAddresses/
 test.java
 checkPermutation/
